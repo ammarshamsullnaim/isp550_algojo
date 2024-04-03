@@ -1,0 +1,62 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+td {
+  border: 1px solid #ccc;
+}
+
+.register-link {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  background-color: #0055ff;
+}
+
+/* Make the table responsive */
+
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+  }
+}
+
+/* Add some custom styles to the table header */
+
+th {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+/* Add some custom styles to the table body */
+
+td {
+  font-size: 16px;
+}
+
+/* Add a border radius to the table */
+
+table {
+  border-radius: 5px;
+}

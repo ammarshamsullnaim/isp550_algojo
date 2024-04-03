@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <title>Algojo Cafe</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Algojo Cafe</h1>
+    <p>Welcome to Algojo Cafe!</p>
+
+    <h2>Menu</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Coffee</h4>
+            <div class="menu-item">
+                <img src="C:\Users\user\OneDrive - Universiti Teknologi MARA\Desktop\ANOR\caramel.jpg" alt="Caramel Machiatto">
+                <span>Caramel Machiatto</span>
+                <a href="cart.php?item=caramel_machiatto" class="btn btn-primary ml-auto">Add to Cart</a>
+            </div>
+            <div class="menu-item">
+                <img src="C:\Users\user\OneDrive - Universiti Teknologi MARA\Desktop\ANOR\Menu\latte.jpg" alt="Latte">
+                <span>Latte</span>
+                <a href="cart.php?item=latte" class="btn btn-primary ml-auto">Add to Cart</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>Food</h4>
+            <div class="menu-item">
+                <img src="C:\Users\user\OneDrive - Universiti Teknologi MARA\Desktop\ANOR\Menu\spaghetti meatball.jpg" alt="Spaghetti Meatball">
+                <span>Spaghetti Meatball</span>
+                <a href="cart.php?item=spaghetti_meatball" class="btn btn-primary ml-auto">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>

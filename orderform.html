@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order Form</title>
+</head>
+<body>
+    <h1>Order Form</h1>
+    <form method="POST" action="process_order.php">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody id="productList">
+                <tr>
+                    <td>
+                        <select name="products[]" required>
+                            <option value="">Select Product</option>
+                            <?php
+                            // Connect to the database
+                            $conn = mysqli_connect("localhost", "root", "", "test");
+                            if (!$conn) {
+                                die("Connection failed: " . mysqli_connect_error());
+                            }
+
+                            // Fetch product data from the database
+                            $sql = "SELECT * FROM product";
+                            $result = mysqli_query($conn, $sql);
+
+                            // Generate product options dynamically
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+                            }
+
+                            // Close the database connection
+                            mysqli_close($conn);
+                            ?>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" name="quantities[]" min="1" required>
+                    </td>
+                    <td>
+                        <button type="button" onclick="removeProduct(this)">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" onclick="addProduct()">Add Product</button>
+        <br><br>
+        <input type="submit" value="Place Order">
+    </form>
+
+    <script>
+        function addProduct() {
+            var productList = document.getElementById('productList');
+            var newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>
+                    <select name="products[]" required>
+                        <option value="">Select Product</option>
+                        <?php
+                        // Fetch product data from the database (Place the PHP code here)
+                        ?>
+                    </select>
+                </td>
+                <td>
+                    <input type="number" name="quantities[]" min="1" required>
+                </td>
+                <td>
+                    <button type="button" onclick="removeProduct(this)">Remove</button>
+                </td>
+            `;
+            productList.appendChild(newRow);
+        }
+
+        function removeProduct(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+</html>
+
+<?php include 'footer.php'; ?>

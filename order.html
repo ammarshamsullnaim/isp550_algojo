@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<style>
+	.nav {
+  background-color: #B2A7A6;
+  overflow: hidden;
+}
+
+.nav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav a:hover {
+  background-color: black;
+  color: silver;
+}
+
+.nav a.active {
+  background-color: black;
+  color: white;
+}
+</style>
+</head>
+<body>
+<div class="nav">
+	  <a href="index.html">Home</a>
+	  <a href="#">About</a>
+	  <a href="#">Contact</a>
+</div>
+  <div class="container">
+    <h1 class="text-center">Purchase Form</h1>
+    <form action="order.php" method="post" class="form-group">
+      <label for="orderID">Order ID</label>
+      <input type="text" name="orderID" id="orderID" class="form-control">
+      <label for="orderDate">Order Date</label>
+      <input type="date" name="orderDate" id="orderDate" class="form-control">
+      <label for="statusOrder">Status</label>
+      <select name="statusOrder" id="statusOrder" class="form-control">
+        <option value="Preparing">Preparing</option>
+        <option value="Served">Served</option>
+      </select>
+      <label for="total">Total</label>
+      <input type="text" name="total" id="total" class="form-control"><br>
+      <input type="submit" value="Submit" class="btn btn-primary d-block mx-auto" />
+    </form>
+  </div>
+</body>
+</html>
